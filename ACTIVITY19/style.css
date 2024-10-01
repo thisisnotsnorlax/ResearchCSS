@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+
+.wrapper {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr auto;
+
+  grid-template-areas:
+    "nav header header"
+    "nav main main"
+    "nav footer footer";
+}
+
+header {
+  grid-area: header;
+  background-color: #272727;
+  padding: 1rem;
+  color: #fff;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #3c3d37;
+}
+
+nav ul {
+  padding: 10rem 5rem;
+  height: 90%;
+}
+
+nav ul li {
+  list-style: none;
+  margin-bottom: 1rem;
+  position: relative;
+  width: max-content;
+}
+
+nav ul li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  background-color: #ffffff;
+  transition: 0.5s ease-in-out;
+}
+
+nav ul li:hover::before {
+  width: 100%;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+
+main {
+  grid-area: main;
+  background-color: #cecece;
+  padding: 3rem 5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+main .box {
+  height: 200px;
+  width: 200px;
+  background-color: #606060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #272727;
+  text-align: center;
+  color: #ffffff;
+  padding: 0.5rem;
+}
